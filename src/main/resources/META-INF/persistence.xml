@@ -128,6 +128,8 @@
 	
 	<class>many2many.uni.entities.Student</class>
 	<class>many2many.uni.entities.Subject</class>
+	<class>many2many.bi.entities.Developer</class>
+	<class>many2many.bi.entities.Language</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 
         <properties>

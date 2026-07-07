@@ -1,6 +1,8 @@
 package one2one.uni.entities;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -18,6 +20,13 @@ public class Car
 	private String color;
 	private double price;
 	
-	@OneToOne
+	/*
+	 * FETCH TYPES : EAGER, LAZY
+	 * 
+	 * default for - one_to_one , many_to_one : EAGER
+	 * default for - one_to_many , many_to_many : LAZY
+	 */
+	@OneToOne(fetch = FetchType.LAZY,
+			cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
 	private Engine engine;
 }
