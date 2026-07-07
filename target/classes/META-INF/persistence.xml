@@ -33,11 +33,106 @@
 	<class>one2one.uni.entities.Car</class>
 	<class>one2one.uni.entities.Engine</class>
 	
+	<class>one2one.bi.entities.Mobile</class>
+	<class>one2one.bi.entities.SimCard</class>
+	
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver" /> <!-- DB Driver -->
             <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/one_to_one" /> <!-- DB Name -->
+            <property name="jakarta.persistence.jdbc.user" value="postgres" /> <!-- DB User -->
+            <property name="jakarta.persistence.jdbc.password" value="atharv2722" /> <!-- DB Password --> 
+
+	    <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/> <!-- DB Dialect -->
+            <property name="hibernate.hbm2ddl.auto" value="update" /> <!-- create / create-drop / update -->
+            <property name="hibernate.show_sql" value="true" /> <!-- Show SQL in console -->
+            <property name="hibernate.format_sql" value="true" /> <!-- Show SQL formatted -->
+        </properties>
+
+    </persistence-unit>
+    
+    
+    <!-- one-to-many  -->
+    
+     <persistence-unit name="one_to_many" transaction-type="RESOURCE_LOCAL"> <!-- we can give any name to persistence unit -->
+	
+	<class>one2many.entities.Library</class>
+	<class>one2many.entities.Book</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver" /> <!-- DB Driver -->
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/one_to_many" /> <!-- DB Name -->
+            <property name="jakarta.persistence.jdbc.user" value="postgres" /> <!-- DB User -->
+            <property name="jakarta.persistence.jdbc.password" value="atharv2722" /> <!-- DB Password --> 
+
+	    <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/> <!-- DB Dialect -->
+            <property name="hibernate.hbm2ddl.auto" value="update" /> <!-- create / create-drop / update -->
+            <property name="hibernate.show_sql" value="true" /> <!-- Show SQL in console -->
+            <property name="hibernate.format_sql" value="true" /> <!-- Show SQL formatted -->
+        </properties>
+
+    </persistence-unit>
+    
+    
+    <!-- many_to_one  -->
+    
+    <persistence-unit name="many_to_one" transaction-type="RESOURCE_LOCAL"> <!-- we can give any name to persistence unit -->
+	
+	<class>many2one.entities.Cart</class>
+	<class>many2one.entities.Product</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver" /> <!-- DB Driver -->
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/many_to_one" /> <!-- DB Name -->
+            <property name="jakarta.persistence.jdbc.user" value="postgres" /> <!-- DB User -->
+            <property name="jakarta.persistence.jdbc.password" value="atharv2722" /> <!-- DB Password --> 
+
+	    <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/> <!-- DB Dialect -->
+            <property name="hibernate.hbm2ddl.auto" value="update" /> <!-- create / create-drop / update -->
+            <property name="hibernate.show_sql" value="true" /> <!-- Show SQL in console -->
+            <property name="hibernate.format_sql" value="true" /> <!-- Show SQL formatted -->
+        </properties>
+
+    </persistence-unit>
+    
+    
+    <!-- one_to_many_to_one  -->
+    
+    <persistence-unit name="one_to_many_to_one" transaction-type="RESOURCE_LOCAL"> <!-- we can give any name to persistence unit -->
+	
+	<class>one2manyBidirectional.entities.Employee</class>
+	<class>one2manyBidirectional.entities.Department</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver" /> <!-- DB Driver -->
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/one_to_many_to_one" /> <!-- DB Name -->
+            <property name="jakarta.persistence.jdbc.user" value="postgres" /> <!-- DB User -->
+            <property name="jakarta.persistence.jdbc.password" value="atharv2722" /> <!-- DB Password --> 
+
+	    <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/> <!-- DB Dialect -->
+            <property name="hibernate.hbm2ddl.auto" value="update" /> <!-- create / create-drop / update -->
+            <property name="hibernate.show_sql" value="true" /> <!-- Show SQL in console -->
+            <property name="hibernate.format_sql" value="true" /> <!-- Show SQL formatted -->
+        </properties>
+
+    </persistence-unit>
+    
+    
+    <!-- many_to_many -->
+    
+    <persistence-unit name="many_to_many" transaction-type="RESOURCE_LOCAL"> <!-- we can give any name to persistence unit -->
+	
+	<class>many2many.uni.entities.Student</class>
+	<class>many2many.uni.entities.Subject</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver" /> <!-- DB Driver -->
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/many_to_many" /> <!-- DB Name -->
             <property name="jakarta.persistence.jdbc.user" value="postgres" /> <!-- DB User -->
             <property name="jakarta.persistence.jdbc.password" value="atharv2722" /> <!-- DB Password --> 
 
